@@ -5,6 +5,8 @@ const path=require('path');
 const expressLayouts= require('express-ejs-layouts');
 
 
+app.use(express.static('public'));
+
 
 app.get('/',(req, res)=>{
    res.render('home');// it will render what is shown in home
