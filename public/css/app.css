@@ -5,8 +5,8 @@ body {
 }
 
 nav li:last-child a {
-  transition: all 0.3s ease-in-out;
   background: #FE5F1E;
+  transition: all 0.3s ease-in-out;
 }
 
 nav li:last-child a:hover {
@@ -39,5 +39,30 @@ section.hero {
   background: #FE5F1E;
   border-color: #fff;
   color: #fff;
+}
+
+.btn-orderNow {
+  background: #FE5F1E;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-orderNow:hover {
+  color: #b23301;
+}
+
+section.cart {
+  background: #F8F8F8;
+}
+
+.ordersummary {
+  background: black;
+}
+
+.ordersummary .money {
+  color: #FE5F1E;
+}
+
+section.login {
+  background: #F8F8F8;
 }
 
