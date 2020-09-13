@@ -2,8 +2,6 @@ const flash=require('express-flash');
 const express=require('express');
 const app= express();
 const ejs= require('ejs');
-//const bcrypt=require('bcrypt');
-
 const path=require('path');
 const expressLayouts= require('express-ejs-layouts');
 const mongoose = require('mongoose');
@@ -12,7 +10,6 @@ const MongoDbStore= require('connect-mongo')(session);
 const passport=require('passport');
 require('dotenv').config();
 const passportInit=require('./app/config/passport');
-//var bodyParser = require('body-parser');
 
 //mongoose connection 
 mongoose.connect('mongodb://127.0.0.1:27017/pizza');
@@ -56,11 +53,7 @@ app.use(passport.session()); // passport requires session
 app.use(flash());
 
 
-// configure the app to use bodyParser()
-/*app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());*/
+
 //assert
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));

@@ -19,7 +19,7 @@ function cartController(){
                 }
             }
            let cart=req.session.cart;
-            console.log(cart);
+           
             // check if item does not exist in cart
             if(!cart.items[req.body._id])
             {
@@ -33,11 +33,12 @@ function cartController(){
             }
             else
             { // if already present then just update
-                cart.items[req.body._id].qty = cart.items[req.body._id]+1;
+                cart.items[req.body._id].qty +=1; //cart.items[req.body._id].qty + 1;
                 cart.totalQty=cart.totalQty+1;
                 cart.totalPrice=cart.totalPrice+req.body.price;
             }
-           
+            console.log(cart);
+            console.log(req.body);
           return res.json({totalQty:req.session.cart.totalQty});
       
         }
