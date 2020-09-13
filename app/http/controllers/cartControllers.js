@@ -6,8 +6,8 @@ function cartController(){
         cart: function(req,res)
         {
                 res.render('customer/cart');// it will render what is shown in home   
-        }
-     /*  update:function(req,res)
+        },
+      update:function(req,res)
         {
             //for the first time adding items and system cart structure in the session 
             if(!req.session.cart)
@@ -18,8 +18,8 @@ function cartController(){
                     totalPrice:0
                 }
             }
-            let cart=req.session.cart;
-            console.log(req.body)
+           let cart=req.session.cart;
+            console.log(cart);
             // check if item does not exist in cart
             if(!cart.items[req.body._id])
             {
@@ -37,8 +37,10 @@ function cartController(){
                 cart.totalQty=cart.totalQty+1;
                 cart.totalPrice=cart.totalPrice+req.body.price;
             }
-            return res.json({totalQty:res.session.cart.totalQty});
-        }*/
+           
+          return res.json({totalQty:req.session.cart.totalQty});
+      
+        }
     }
 }
 
